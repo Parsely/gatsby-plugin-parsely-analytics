@@ -15,9 +15,14 @@ export function getOptions(pluginOptions) {
 }
 
 export function absoluteUrlForLocation(location) {
-  return `${window.location.protocol}//${window.location.host}${
-    location.pathname
-    }${location.search}${location.hash}`;
+  return [
+    window.location.protocol,
+    "//",
+    window.location.host,
+    location.pathname,
+    location.search,
+    location.hash,
+  ].join("")
 }
 
 function parselyTrackPageViewExists() {
