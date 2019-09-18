@@ -28,16 +28,18 @@ exports.onRenderBody = function handleRenderBody(
         key="gatsby-plugin-parsely-analytics-onload"
         dangerouslySetInnerHTML={{
           __html: `
-          window.PARSELY = window.PARSELY || {
-            pageviewQueue: [],
-            autotrack: false,
-            pixelhost: ${pixelHost},
-            onload: function() {
-              for (var i = 0; i < window.PARSELY.pageviewQueue.length; i++) {
-                PARSELY.beacon.trackPageView(window.PARSELY.pageviewQueue[i]);
-              }
-            },
-          };`
+          if (typeof window !== "undefined" && window) {
+            window.PARSELY = window.PARSELY || {
+              pageviewQueue: [],
+              autotrack: false,
+              pixelhost: ${pixelHost},
+              onload: function() {
+                for (var i = 0; i < window.PARSELY.pageviewQueue.length; i++) {
+                  PARSELY.beacon.trackPageView(window.PARSELY.pageviewQueue[i]);
+                }
+              },
+            };
+          }`
         }}
       />
     ]);
