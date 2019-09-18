@@ -28,7 +28,7 @@ exports.onRenderBody = function handleRenderBody(
         key="gatsby-plugin-parsely-analytics-onload"
         dangerouslySetInnerHTML={{
           __html: `
-          window.PARSELY = {
+          window.PARSELY = window.PARSELY || {
             pageviewQueue: [],
             autotrack: false,
             pixelhost: ${pixelHost},
