@@ -6,6 +6,7 @@ exports.onRouteUpdate = function handleRouteUpdate(
   apiCallbackContext,
   pluginOptions
 ) {
+  if (!window.PARSELY) return
   const { prevLocation, location } = apiCallbackContext;
   const options = getOptions(pluginOptions);
   if (!options.isEnabled) return;
@@ -22,6 +23,7 @@ exports.onRouteUpdate = function handleRouteUpdate(
     if (options.parselyTrackPageViewExists) {
       window.PARSELY.beacon.trackPageView(params);
     } else {
+      if (!window.PARSELY.pageviewQueue) return
       window.PARSELY.pageviewQueue.push(params);
     }
   };
