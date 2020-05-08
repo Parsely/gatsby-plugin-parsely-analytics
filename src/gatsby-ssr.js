@@ -6,7 +6,7 @@ import React from "react";
 import { getOptions } from "./utils";
 
 exports.onRenderBody = function handleRenderBody(
-  { setHeadComponents },
+  { setPostBodyComponents },
   pluginOptions
 ) {
   const options = getOptions(pluginOptions);
@@ -16,7 +16,7 @@ exports.onRenderBody = function handleRenderBody(
     // pixelHost needs double-quotes because of how it'll be embedded.
     const pixelHost = options.pixelHost ? `"${options.pixelHost}"` : null;
 
-    return setHeadComponents([
+    return setPostBodyComponents([
       <script
         key="gatsby-plugin-parsely-analytics"
         id="parsely-cfg"

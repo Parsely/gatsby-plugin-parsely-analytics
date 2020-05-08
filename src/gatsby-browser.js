@@ -13,7 +13,7 @@ exports.onRouteUpdate = function handleRouteUpdate(
 
   const params = {
     url: absoluteUrlForLocation(location),
-    urlref: !!prevLocation ? absoluteUrlForLocation(prevLocation) : ""
+    urlref: !!prevLocation ? absoluteUrlForLocation(prevLocation) : document.referrer
   };
 
   // wrap in a timeout to give metadata extraction and react-helmet time to execute
