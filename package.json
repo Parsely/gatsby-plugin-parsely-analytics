@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-parsely-analytics",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Gatsby plugin that adds Parse.ly Analytics to your site.",
   "main": "index.js",
   "scripts": {
