@@ -23,7 +23,7 @@ plugins: [
   {
     resolve: `gatsby-plugin-parsely-analytics`,
     options: {
-      apikey: YOUR_PARSELY_APIKEY,
+      apikey: YOUR_PARSELY_SITE_ID,
       enableInDevelopment: false // send page views when NODE_ENV !== prod
     }
   }
